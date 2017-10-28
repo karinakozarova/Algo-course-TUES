@@ -6,40 +6,26 @@
 using namespace std;
 
 int small(int a, int b){
-	if(a<b) return a;
-	else return b;
+	return a<b?a:b;
 }
-int big(int a, int b){
-	if(a>b) return a;
-	else return b;
-}
-
 
 int main() {
-    /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
-    long long max_count = 0;
-
-    int a,b,c;
+    long long int max_count = 0,a,b,c;
     cin >> a >> b >> c;
+    int sum = a + b;
     int smaller = small(a,b);
-    int bigger = big(a,b);
-    // a- what eats a white
-    // b - what a black one eats
-    // c - all they have eaten
- 	while(c>= 0){
- 		// remove smaller until c == bigger
- 		if(c >= bigger){
- 			// remove smaller
- 			    cout << "asdfvb ";
-
+    int bigger = sum - smaller;
+  
+ 	while(c > 0){
  			if(c == bigger){
  				c -= bigger;
+ 			} else if(c < bigger + smaller){
+ 				c -= smaller;
+
  			} else {
  				c -= smaller;
  			}
- 			cout << c;
  			max_count += 1;
- 		}
     }
     cout << max_count;
     return 0;
