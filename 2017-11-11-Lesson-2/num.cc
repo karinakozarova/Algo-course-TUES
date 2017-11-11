@@ -5,14 +5,14 @@
 using namespace std;
 
 int main(){
-	long long int n,k;
+	unsigned long long int n,k;
 
 	cin >> n >> k; // stoinost
 
-	long long l = 0,r = n,a_n,result = 0;
+	unsigned long long l = 0,r = n,a_n,result = 0;
 
 	while(r-l > 1){
-		int middle = (l+r)/2;
+		unsigned long long int middle = (l+r)/2;
 		a_n = pow(middle,1.3) + 3*pow(middle,0.7) + 9*pow(middle,0.3); 
 		if(a_n == k) {
 			result = middle; 
