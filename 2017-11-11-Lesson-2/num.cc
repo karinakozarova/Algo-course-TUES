@@ -9,7 +9,13 @@ int main(){
 
 	cin >> n >> k; // stoinost
 
-	unsigned long long l = 0,r = n,a_n,result = 0;
+	unsigned long long int l = 0,r = n,a_n,result = 0;
+  if(k <= 0){
+  	if( n == 0) cout << 1;
+    else cout << 0;
+    return 0;
+  }
+
 
 	while(r-l > 1){
 		unsigned long long int middle = (l+r)/2;
